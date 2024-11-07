@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ShopTaPaire - Accueil</title>
+    <link rel="stylesheet" type="text/css" href="Style_Site.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap-5.2.3-dist 2/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="Images/ShopTaPaire.ico"/>
+    <style>
+            
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f8f9fa;
+        }
+
+        header {
+            background-color: black;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        header .logo img {
+            width: 50px;
+            height: auto;
+        }
+
+        header h1 {
+            margin: 10px 0;
+            font-size: 24px;
+        }
+
+        .menu-button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            display: none;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .hero,
+        .hero p,
+        .cta-button,
+        .featured-products h2,
+        .product,
+        .featured-products,
+        .footer {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s forwards;
+        }
+
+        .cta-button,
+        .product .cta-button {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 16px;
+            text-decoration: none;
+            color: #ffffff;
+            background-color: black;
+            border-radius: 4px;
+        }
+
+        .cta-button:hover,
+        .product .cta-button:hover {
+            background-color: #333333;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            .menu-button {
+                display: block;
+            }
+
+            nav #main-nav {
+                display: none;
+            }
+
+            nav.active #main-nav {
+                display: flex;
+            }
+
+            main {
+                padding-top: 70px;
+            }
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .slider {
+            position: relative;
+            max-width: 100%;
+            overflow: hidden;
+            margin-top: 20px;
+        }
+
+        .slider-container {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slide {
+            min-width: 100%;
+            box-sizing: border-box;
+        }
+
+        .slider-button {
+            position: absolute;
+            top: 50%;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border: none;
+            cursor: pointer;
+            transform: translateY(-50%);
+            font-size: 18px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+        }
+
+        .slider-button-prev {
+            left: 10px;
+        }
+
+        .slider-button-next {
+            right: 10px;
+        }
+
+        .selection-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .featured-products,
+        .products,
+        .product {
+            margin-top: 20px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s forwards;
+        }
+
+        .featured-products {
+            width: 50%;
+            box-sizing: border-box;
+            margin-top: 60px;
+            text-align: center;
+            align-content: center;
+        }
+
+        .products,
+        .product {
+            box-sizing: border-box;
+            margin-top: 50px;
+            margin-left: 120px;
+            text-align: center;
+            align-content: center;
+        }
+
+        .featured-products h2,
+        .hero-section {
+            text-align: center;
+        }
+        
+        .hero {
+            background-image: url('Images/imagefond2.png');
+            background-size: cover;
+            background-position: center;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+            color: #fff;
+            text-align: center;
+            padding: 50px;
+        } 
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+          <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-black">
+            
+                <!-- Logo and ShopTaPaire text -->
+                <div class="brand">
+                    <a class="navbar-brand" href="Page_Accueil.html">
+                    <img src="Images/ShopTaPaire.jpg" alt="" width="90" height="80" class="d-inline-block align-text-top my-custom-image">
+                    </a>
+                </div>
+                <button id="menu-button" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="Page_Accueil.html">Accueil</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Code_Site.html">Sneakers</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Page_Streatwear.html">Streetwear</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Page_Contact.html">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Page_Connexion.html">Espace Marchand</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+
+    <main>
+        <div class="row">
+            <section class="hero">
+                
+                <h1 class="fade-in">Bienvenue chez ShopTaPaire</h1>
+                <p class="fade-in">Découvrez les dernières tendances en sneakers et streetwear.</p>
+                <a href="Code_Site.html" class="cta-button slide-in">Voir nos sneakers</a>
+                <a href="Page_Streatwear.html" class="cta-button slide-in">Voir nos produits streetwear</a>
+            </section>
+            <section class="featured-products">
+                <h2 class="fade-in">Sélection Streetwear de la semaine</h2>
+                <div class="product fade-in">
+                <img src="Images/Uniqlo_rose.webp" alt="Streetwear 1">
+                <h3>Tee-Shirt Uniqlo x KAWS Rose</h3>
+                <p>A partir de 50 €</p>
+                <a href="UniqloRose.html" class="cta-button">Détails</a>
+                </div>
+                <div class="product fade-in">
+                <img src="Images/StussyPull.webp" alt="Streetwear 2">
+                <h3>Pull Stussy x Nike Crème</h3>
+                <p>A partir de 60 €</p>
+                <a href="StussyPull.html" class="cta-button">Détails</a>
+                </div>
+                <div class="product fade-in">
+                <img src="Images/ZipTravis.webp" alt="Streetwear 3">
+                <h3>Woodie Zip Travis Scott</h3>
+                <p>A partir de 70 €</p>
+                <a href="ZipTravis.html" class="cta-button">Détails</a>
+                </div>
+            </section>
+
+            <section class="featured-products ">
+            <h2 class="fade-in">Sélection Sneakers de la semaine</h2>
+            <div class="product fade-in">
+                <img src="Images/CampusBlack.webp" alt="Sneaker 1">
+                <h3>Adidas Campus 00's Black</h3>
+                <p>A partir de 180 €</p>
+                <a href="CampusBlack.html" class="cta-button">Détails</a>
+            </div>
+            <div class="product fade-in">
+                <img src="Images/CampusBleu.webp" alt="Sneaker 2">
+                <h3>Adidas Campus 00's Bleu</h3>
+                <p>A partir de 180 €</p>
+                <a href="CampusBleu.html" class="cta-button">Détails</a>
+            </div>
+            <div class="product fade-in">
+                <img src="Images/CampusGrey.webp" alt="Streetwear 1">
+                <h3>Adidas Campus 00's Grey</h3>
+                <p>A partir de 180 €</p>
+                <a href="CampusGrey.html" class="cta-button">Détails</a>
+            </div>
+            </section>
+            </div>
+        
+    </main>
+    <br/>
+
+    <footer>
+        <p class="fade-in">&copy; 2022 ShopTaPaire</p>
+    </footer>
+
+    <script>
+        document.getElementById("menu-button").addEventListener("click", function () {
+    var nav = document.querySelector(".navbar-collapse");
+    nav.classList.toggle("show");
+});
+
+const sliderContainer = document.querySelector('.slider-container');
+const slides = document.querySelectorAll('.slide');
+let currentIndex = 0;
+
+function updateSlider() {
+    const newTransformValue = -currentIndex * 100 + '%';
+    sliderContainer.style.transform = 'translateX(' + newTransformValue + ')';
+}
+
+document.querySelector('.slider-button-prev').addEventListener('click', function () {
+    prevSlide();
+});
+
+document.querySelector('.slider-button-next').addEventListener('click', function () {
+    nextSlide();
+});
+
+function prevSlide() {
+    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+    updateSlider();
+}
+
+function nextSlide() {
+    currentIndex = (currentIndex + 1) % slides.length;
+    updateSlider();
+}
+
+    </script>
+
+</body>
+
+</html>
